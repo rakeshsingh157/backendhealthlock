@@ -46,17 +46,27 @@ router.post("/login", async (req, res) => {
       return res.status(401).json({ error: "❌ Invalid credentials" });
     }
 
+    // 3. Generate JWT
     const token = jwt.sign(
-      { id: patient._id, role: "patient" }, // Payload: includes patient ID and role
+      { id: patient._id, role: "patient" }, // Payload
       "secretKey123", 
-      { expiresIn: "1h" } // Token expires in 1 hour
+      { expiresIn: "1h" } 
     );
 
-    // 4. Send a success response with the token and patient role
-    res.status(200).json({ message: "✅ Login successful", token, role: "patient" });
+    // 4. Send a success response with token, role, and patient info
+    res.status(200).json({ 
+      message: "✅ Login successful", 
+      token, 
+      role: "patient",
+      patient: {
+        id: patient._id,
+        name: patient.name,   // 👈 name included
+        email: patient.email
+      }
+    });
 
   } catch (error) {
-    console.error("Login error:", error); // Log the full error for debugging
+    console.error("Login error:", error); 
     res.status(500).json({ error: "❌ Something went wrong during login", details: error.message });
   }
 });
