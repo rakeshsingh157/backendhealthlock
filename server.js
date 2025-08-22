@@ -11,6 +11,8 @@ const docShareRoutes = require("./routes/docShareRoutes");
 const analysisRoutes = require("./routes/analysis");
 const chatRoutes = require("./app");
 const accessDataRoutes = require("./routes/accessdata");
+const logs = require("./routes/logRoutes")
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -35,6 +37,7 @@ app.use("/api/qr", QR);
 app.use("/api/docShare", docShareRoutes);
 app.use("/api/chat", chatRoutes);
 app.use("/api/accessdata", accessDataRoutes);
+app.use("/api/logs",logs);
 
 
 
