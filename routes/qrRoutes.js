@@ -21,7 +21,7 @@ router.post("/generate-temp-url/:userId/:fileId", async (req, res) => {
     });
     await tempLink.save();
 
-    res.json({ tempUrl: `http://localhost:3000/api/qr/show/${token}`, expiresIn: "5 minutes", fileUrl: userFile.fileUrl, userId: userFile.userId, file: userFile.fileName });
+    res.json({ tempUrl: `https://backendhealthlock.onrender.com/api/qr/show/${token}`, expiresIn: "5 minutes", fileUrl: userFile.fileUrl, userId: userFile.userId, file: userFile.fileName });
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: "Internal server error" });
