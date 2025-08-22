@@ -1,0 +1,36 @@
+{
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.873.0",
+    "@aws-sdk/s3-request-presigner": "^3.873.0",
+    "aws-sdk": "^2.1692.0",
+    "axios": "^1.11.0",
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.2",
+    "body-parser": "^2.2.0",
+    "cohere-ai": "^7.18.1",
+    "cors": "^2.8.5",
+    "crs": "^0.0.01",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "http": "^0.0.1-security",
+    "jsonwebtoken": "^9.0.2",
+    "mammoth": "^1.10.0",
+    "mongoose": "^8.17.2",
+    "multer": "^2.0.2",
+    "nodemon": "^3.1.10",
+    "path": "^0.12.7",
+    "tesseract.js": "^6.0.1",
+    "uuid": "^11.1.0"
+  },
+  "name": "sunhack-backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
