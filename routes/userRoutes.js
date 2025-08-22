@@ -5,7 +5,6 @@ const Patient = require("../models/patientModel");
 const bcrypt = require("bcryptjs"); // Import bcryptjs for password comparison
 const jwt = require("jsonwebtoken"); // Import jsonwebtoken for token generation
 
-// Patient Register Route
 router.post("/register", async (req, res) => {
   try {
     const { name, email, password, age } = req.body;
@@ -17,7 +16,7 @@ router.post("/register", async (req, res) => {
     const newPatient = new Patient({
       name,
       email,
-      password: hashedPassword, // Store the hashed password
+      password: hashedPassword, 
       age,
     });
 
