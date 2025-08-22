@@ -104,4 +104,24 @@ router.put("/verify/:id", async (req, res) => {
   }
 });
 
+router.get("/all", async (req, res) => {
+  try {
+    const doctors = await Doctor.find({}, "-password"); 
+    // password field hide kar diya for security
+
+    res.status(200).json({
+      success: true,
+      count: doctors.length,
+      data: doctors
+    });
+  } catch (error) {
+    console.error("❌ Error fetching doctors:", error);
+    res.status(500).json({
+      success: false,
+      message: "Server error while fetching doctors"
+    });
+  }
+});
+
+
 module.exports = router;
